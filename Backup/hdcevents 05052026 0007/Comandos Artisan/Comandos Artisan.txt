@@ -1,0 +1,18 @@
+Para criar uma tabela:
+* no prompt do vsCode, entrar na pasta raiz do projeto;
+Comando: 
+* php artisan make:migration create_products_table => isso inicia a criação da tabela "produtos";
+Para verificar o status das migrations:
+* php artisan migrate:status => As que estiverem "Yes" estão confirmadas, as que estiverem "No", estão pendentes;
+Parfa confirmar a criação de uma tabela:
+* php artisan migrate => Neste momento ele cria definitivamente a tabela;
+
+Alteração de tabelas e campos:
+Comando: fresh => Apaga e recria todas as tabelas e campos. Cuodado pois apaga todos os dados antigos;
+* php artisan migrate:fresh
+
+Criar campos sem apagar os dados já existentes:
+* php artisan make:migration add_category_to_products_table => Inicia a criação de uma campo com nome category na tabela products;
+Obs: Ele cria um Schema table, que permite a criação de colunas para a tabela.
+Apos o Schema criado, basta adcionar os campos a serem criados e rodar o comando para confirmar a alteração na tabela;
+* php artisam migrate
